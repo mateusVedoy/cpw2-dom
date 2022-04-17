@@ -9,9 +9,7 @@ function background() {
      * Desenvolva uma função capaz de trocar a cor do fundo da página, ou seja,
      * alterar o background do body para a cor #BECCC3.
      */
-    //let [,,body] = document.getElementsByTagName('html')[0].childNodes;
     document.getElementsByTagName('body')[0].style.backgroundColor = '#BECCC3';
-    //body.style.backgroundColor = '#BECCC3';
 }
 
 /**
@@ -56,7 +54,15 @@ function search() {
      *
      * Além disso, a função removeAllChildren abaixo também pode ser útil para o desenvolvimento da solução
      */
-
+    let searchName = document.getElementById('name').value;
+    let searchDiv = document.getElementById('search');
+    let t = '';
+    data.forEach(person => {
+        if(person.name.toLowerCase().indexOf(`${searchName.toLowerCase()}`) > -1){
+            t += `<p>${person.name}</p>`;
+        }
+    });
+    searchDiv.innerHTML = t;
 }
 
 /**
