@@ -9,8 +9,9 @@ function background() {
      * Desenvolva uma função capaz de trocar a cor do fundo da página, ou seja,
      * alterar o background do body para a cor #BECCC3.
      */
-    let [,,body] = document.getElementsByTagName('html')[0].childNodes;
-    body.style.backgroundColor = '#BECCC3';
+    //let [,,body] = document.getElementsByTagName('html')[0].childNodes;
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#BECCC3';
+    //body.style.backgroundColor = '#BECCC3';
 }
 
 /**
@@ -26,6 +27,9 @@ function show() {
      * Recupera os valores dos campos de texto cujo o id='fname' e id='lname' e apresente o nome
      * e o sobrenome de uma pessoa (separado por um espaço) na div id='result'
      */
+    let name = document.getElementById('fname').value;
+    let lastName = document.getElementById('lname').value;
+    document.getElementById('result').innerHTML =`<p>${name} ${lastName}</p>`;
 }
 
 /**
