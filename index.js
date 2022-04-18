@@ -58,8 +58,8 @@ function search() {
     let searchDiv = document.getElementById('search');
     let t = '';
     data.forEach(person => {
-        if(person.name.toLowerCase().indexOf(`${searchName.toLowerCase()}`) > -1){
-            t += `<p>${person.name}</p>`;
+         if(person.name.toLowerCase().substr(0, searchName.length).indexOf(`${searchName.toLowerCase()}`) > -1){
+            t += `<div>${person.name}</div>`;
         }
     });
     searchDiv.innerHTML = t;
